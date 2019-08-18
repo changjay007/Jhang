@@ -1,0 +1,267 @@
+/********************  header *********************/
+.carousel-item {
+  width:100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+/* Step2.6:調整logo大小 */
+.nav__logo {
+  width: 35px;
+}
+
+/*  step2.7:調整icons顏色及間距  */
+.nav__icons a {
+  color: lightcyan;
+  /* padding: 50px; */
+  margin: 5px;
+}
+
+/* step2.8:螢幕小於576px不顯示icons */
+.nav__icons {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .nav__icons {
+    display: inline-block;
+  }
+}
+
+/*  step2.9:選單區塊置中 */
+.navbar__collapse {
+  justify-content: center;
+  padding: 5px;
+}
+
+.navbar .navbar__brand {
+  width: 100px;
+  margin: 0;
+}
+
+.nav__icons {
+width: 100px;
+text-align: right;
+}
+
+/* step2.10:漢堡下拉選單文字置中 */
+.navbar-nav li {
+  text-align: center;
+}
+
+/********************  carousel *********************/
+
+/* step3.3:加入上方固定文字及樣式 */
+.carousel__info {
+  position: absolute;
+  z-index: 2;
+  font-size: 25px;
+  left:50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(141, 97, 114);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* step3-4: RWD文字大小調整 */
+/* 大於768px時改變字體大小 */
+@media screen and (min-width: 768px) {
+  .carousel__info {
+    font-size: 50px;
+  }
+}
+
+/********************  introduction *********************/
+
+/* step4-2: 調整圖片大小 */
+.intro__avatar__container {
+  width: 300px;
+}
+.intro__avatar {
+  width:100%;
+}
+
+/* step4-4: 調整文字樣式 */
+.intro__title {
+  /* color: brown; */
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.intro__text {
+  color: dimgray;
+}
+.intro__text h3 {
+  /* padding-left: 100px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+.intro__text p {
+  font-size: 14px;
+  text-align: justify;
+  line-height: 24px;
+}
+
+/* step4-5: 調整按鈕樣式 */
+.intro__text button {
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+
+/* skill */
+/******** skill ********/
+
+.skill h2 {
+  /* skill-2 */
+  text-align: center;
+  /* skill-7 */
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.skill__content__item img {
+  /* skill-2 */
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  /* contain or cover */
+  /* skill-7 */
+  margin-bottom: 30px;
+}
+
+.skill__content__item {
+  /* skill-3、skill-6 */
+/* border: solid red; */
+  /* skill-9 */
+margin-bottom: 40px;
+}
+
+.skill__content__item__container {
+  /* skill-5、skill-6 */
+  border: 2px dashed rgb(135, 135, 141);
+  height: 100%;
+  /* skill-6 */
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 20px;
+  border-radius: 5%;
+  position: relative;
+  bottom: 0;
+  /* skill-8:加上動畫效果 */
+  transition: bottom 500ms,background-color 500ms;
+}
+
+/* skill-8:加上 hover 效果 偽類選取器 */
+.skill__content__item__container:hover {
+  
+  bottom: 3px;
+  background-color: rgba(201,225,238,0.7);
+}
+/* skill-9:RWD */
+@media screen and (min-width: 768px) {
+  .skill__content__item {
+    margin-bottom: 0px;
+  }
+}
+
+/******** portfolio ********/
+.portfolio h2 {
+  /* portfolio-2 */
+text-align: center;
+padding-top:20px;
+padding-bottom:20px;
+}
+.portfolio__items__container img {
+  /* portfolio-2 */
+width: 100%;
+height:250px;
+object-fit: cover;
+border-radius: 5%;
+}
+.portfolio__items__container {
+  /* portfolio-2 */
+margin-bottom: 30px;
+  /* portfolio-3 */
+position: relative;
+  /* portfolio-7 */
+overflow: hidden;
+}
+.portfolio__items__container__cover {
+  /* portfolio-3 */
+position: absolute;
+top: 0;
+left: 0;
+width: 100px;
+height:250px;
+  /* portfolio-4 調整 cover，使之符合位置*/
+width: calc(100% - 30px);
+left: 15px;
+  /* portfolio-5 為 cover 添加背景顏色及文字位置、顏色調整*/
+background-color: rgba(0,0,0,0.5);
+border-radius: 5%;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+  /* portfolio-6 加上hover 效果及動畫*/
+top: 100%;
+transition: top 500ms;
+}
+
+.portfolio__items__container:hover .portfolio__items__container__cover {
+  /* portfolio-6 */
+  top: 0;
+}
+
+/******** lightbox ********/
+.portfolio__lightbox {
+  /*lightbox-2 調整 lightbox 位置*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /*lightbox-4 為 lightbox 加上背景色，並調整內元素位置*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+  /*lightbox-6*/
+  display: none;
+}
+.portfolio__lightbox img {
+  /*lightbox-3 調整圖片大小*/
+  width: 70vw;
+  max-height: 100vh;
+  object-fit: contain;
+}
+.portfolio__lightbox__close {
+  /*lightbox-5 調整 close icon 的位置及大小*/
+  position: absolute;
+  /* position: relative; */
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+/******** footer ********/
+footer {
+  /*footer-2 為 footer 加上背景色，並調整元素置中*/
+background-color:rgb(92, 86, 86); 
+color: white;
+padding: 30px 0;
+text-align: center;
+}
+footer a {
+  /*footer-3*/
+
+}
